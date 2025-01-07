@@ -1,4 +1,4 @@
-package com.coffeevoyager.domain
+package com.coffeevoyager.domain.shop
 
 sealed class CoffeeGrindSize {
     data object Coarse : CoffeeGrindSize()

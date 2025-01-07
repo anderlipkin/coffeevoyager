@@ -43,7 +43,7 @@ console-reports:
 
 output-reports:
   active: true
-  exclude:
+  exclude: []
   # - 'TxtOutputReport'
   # - 'XmlOutputReport'
   # - 'HtmlOutputReport'
@@ -628,11 +628,7 @@ style:
   MagicNumber:
     active: true
     excludes: *testFolders
-    ignoreNumbers:
-      - '-1'
-        - '0'
-        - '1'
-        - '2'
+    ignoreNumbers: ['-1', '0', '1', '2']
     ignoreHashCodeFunction: true
     ignorePropertyDeclaration: false
     ignoreLocalVariableDeclaration: false
@@ -817,7 +813,7 @@ Compose:
   CompositionLocalAllowlist:
     active: true
     # -- You can optionally define a list of CompositionLocals that are allowed here
-    # allowedCompositionLocals: LocalSomething,LocalSomethingElse
+    allowedCompositionLocals: LocalExtendedColors
   CompositionLocalNaming:
     active: true
   ContentEmitterReturningValues:

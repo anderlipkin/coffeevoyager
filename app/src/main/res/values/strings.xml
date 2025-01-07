@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">Coffee Voyager</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="search">Search</string>
+    <string name="reset">Reset</string>
+    <string name="done">Done</string>
+    <string name="filters">Filters</string>
+    <string name="favorite">Favorite</string>
+    <string name="company">Company</string>
+    <string name="country">Country</string>
+    <string name="taste">Taste</string>
+    <string name="price">Price</string>
+    <string name="price_with_currency">Price, %1$s</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="sort_price_low_to_high">Price: Low to High</string>
+    <string name="sort_price_high_to_low">Price: High to Low</string>
+    <string name="sort_price_newest_arrivals">Newest Arrivals</string>
+    <string name="coffee_shop_empty_list_title">Something is empty here</string>
+    <string name="coffee_shop_empty_list_description">Refresh</string>
+    <string name="coffee_shop_empty_list_on_search_title">No coffee beans found</string>
+    <string name="coffee_shop_empty_list_on_search_description">Try changing your search query</string>
 </resources>

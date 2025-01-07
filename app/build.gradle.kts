@@ -4,10 +4,16 @@ plugins {
     alias(libs.plugins.coffeevoyager.android.application)
     alias(libs.plugins.coffeevoyager.android.application.compose)
     alias(libs.plugins.coffeevoyager.android.application.flavors)
+    alias(libs.plugins.coffeevoyager.android.room)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.secrets)
+    alias(libs.plugins.protobuf)
 }
 
 android {
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId = "com.coffeevoyager"
         versionCode = 1
@@ -43,13 +49,41 @@ android {
     namespace = "com.coffeevoyager"
 }
 
-dependencies {
-//    implementation(projects.core.common)
+protobuf {
+    protoc {
+        artifact = libs.protobuf.protoc.get().toString()
+    }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.builtins {
+                register("java") {
+                    option("lite")
+                }
+                register("kotlin") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
 
+secrets {
+    defaultPropertiesFileName = "secrets.defaults.properties"
+}
+
+dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.coil.kt)
-    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.ktor)
+    implementation(libs.coil.svg)
+    implementation(libs.ktor.cio)
+    implementation(libs.ktor.logging)
+    implementation(libs.ktor.content.negotiation)
+    implementation(libs.ktor.serialization.json)
+    implementation(libs.androidx.dataStore)
+    implementation(libs.protobuf.kotlin.lite)
+    implementation(libs.kotlinx.datetime)
 }
